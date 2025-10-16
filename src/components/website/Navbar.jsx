@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center  relative">
             <img src={Logo} alt="Logo" className="max-w-[130px] h-auto" />
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
+            <div className="hidden lg:block">
               <div className="ml-10 flex items-baseline space-x-8">
                 {/* {navLinksData.map((link) => (
                   <NavLink
@@ -42,35 +42,35 @@ const Navbar = () => {
 
                 <NavLink
                   to={'/about'}
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-gray-900 hover:text-webprimary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Industries
                 </NavLink>
                 <NavLink
                   to={'/shop'}
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-gray-900 hover:text-webprimary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Future Vision
                 </NavLink>
                 <NavLink
                   to={'/contact'}
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-gray-900 hover:text-webprimary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Associations
                 </NavLink>
                 <NavLink
                   to={'/contact'}
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-gray-900 hover:text-webprimary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About Us
                 </NavLink>
                 <NavLink
                   to={'/contact'}
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  className="text-gray-700 hover:text-gray-900 hover:text-webprimary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   News & Articles
@@ -79,7 +79,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Auth Buttons */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-4">
               <Link to={'/login'}>
                 <button className="min-w-[90px] btn-first">
                   Get In Touch
@@ -89,7 +89,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <button
                 onClick={toggleMenu}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
@@ -108,7 +108,7 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         <div
-          className={`md:hidden absolute top-24 right-0 bg-white border-t w-3/4 h-screen border-gray-200 origin-top transition-all duration-500 ease-in-out ${isMenuOpen
+          className={`lg:hidden absolute top-24 right-0 bg-white border-t w-3/4 h-screen border-gray-200 origin-top transition-all duration-500 ease-in-out ${isMenuOpen
             ? "animate-growDown opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
             }`}
