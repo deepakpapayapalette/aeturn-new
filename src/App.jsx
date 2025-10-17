@@ -7,6 +7,7 @@ import WebsiteLayout from './layouts/WebsiteLayout'
 import ErrorPage from './pages/ErrorPage'
 import HomePage from './pages/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import FutureVision from './pages/FutureVision';
 
 
 function App() {
@@ -34,6 +35,10 @@ function App() {
         {
           path: '/',
           element: <HomePage />
+        },
+        {
+          path: '/future-vision',
+          element: <FutureVision />
         },
 
       ]

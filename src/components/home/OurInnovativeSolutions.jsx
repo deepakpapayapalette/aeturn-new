@@ -13,7 +13,6 @@ const OurInnovativeSolutions = () => {
     mobile: { breakpoint: { max: 640, min: 0 }, items: 1, showDots: false },
   };
   const isLargeScreen = window.innerWidth >= 1024;
-  console.log(isLargeScreen)
   return (
     <section className='space-top'>
       <div className="container">

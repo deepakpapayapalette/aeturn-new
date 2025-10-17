@@ -40,10 +40,10 @@ const OurFounders = () => {
           Visionaries driving AETURN’s journey, bringing together expertise in healthcare, technology, and innovation to build future-ready solutions.
         </p>
 
-        <div className='grid lg:grid-cols-3 gap-10 md:grid-cols-2 '>
-          {teamMembers.map((item, index) => (
-            <div>
-              <SingleCard key={index} data={item} />
+        <div className='grid lg:grid-cols-3 lg:gap-10 gap-6 md:grid-cols-2 '>
+          {teamMembers.map((item) => (
+            <div key={item.id}>
+              <SingleCard data={item} />
             </div>
           ))}
         </div>

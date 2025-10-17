@@ -30,7 +30,8 @@
 }
 
 nav .active {
-  color: var(--web-primary);
-  font-weight: 600;
+  /* color: var(--web-primary); */
+  color: #444444;
+  /* font-weight: 600; */
 
 }
