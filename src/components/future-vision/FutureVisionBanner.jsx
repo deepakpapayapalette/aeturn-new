@@ -5,12 +5,11 @@ const FutureVisionBanner = () => {
   return (
     <section className="space-top w-full bg-white">
       <div className="container">
-        <div className="flex  rounded-2xl overflow-hidden shadow-md  flex-col lg:flex-row">
+        <div className="flex  relative rounded-2xl overflow-hidden shadow-md  flex-col lg:flex-row">
 
           {/* Left Content */}
-          <div className=" relative bg-webprimary text-white p-6 lg:p-10 flex flex-col justify-center lg:w-2/5 ps-6 py-6">
-            <div className=" lg:absolute left-12   bg-white rounded-md p-6">
-
+          <div className="  bg-webprimary text-white p-6 lg:p-10 flex flex-col justify-center lg:w-2/5 ps-6 py-6  z-[50]">
+            <div className=" lg:absolute left-12 lg:max-w-[600px]  bg-white rounded-md p-6">
               <h2 className="text-2xl lg:text-4xl font-semibold mb-4 leading-snug text-black">
                 Future Vision – Building a Smarter Tomorrow
               </h2>
@@ -28,7 +27,7 @@ const FutureVisionBanner = () => {
           </div>
 
           {/* Right Image */}
-          <div className="lg:w-3/5 w-full">
+          <div className="lg:w-3/5 w-full z-0">
             <img
               src={img1} // replace with your actual image path
               alt="Future Vision AI"
