@@ -25,16 +25,16 @@ const OurInnovativeSolutions = () => {
 
           <div className='pt-4'>
             <Carousel
-              customButtonGroup={<CustomButtonGroup />}
+              // customButtonGroup={<CustomButtonGroup />}
               responsive={responsive}
               infinite
               keyBoardControl
               swipeable
               draggable
-              showDots={isLargeScreen ? true : false}
-              containerClass="pt-4"
+              showDots={true}
+              containerClass="pt-4 pb-10 lg:pb-5"
               itemClass="ps-0 pt-0"
-              arrows={false}
+              arrows={isLargeScreen}
               renderButtonGroupOutside={false}
               partialVisible
             >

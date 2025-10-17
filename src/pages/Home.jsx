@@ -22,9 +22,7 @@ const HomePage = () => {
       <AIActionableIntelligence />
       <OurFounders />
       <NewsArticles />
-      <PartneringForGlobalImpact />
-
-
+      <PartneringForGlobalImpact /> 
     </>
   )
 }
