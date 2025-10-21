@@ -64,12 +64,12 @@ const CoreBusinessDomains = () => {
                 <h3 className="md:text-2xl font-semibold text-webprimary mb-2">
                   {domain.title}
                 </h3>
-                <p className="text-sm mb-4">{domain.description}</p>
+                <p className="text-md mb-4">{domain.description}</p>
               </div>
               <div className="flex justify-between items-center mt-auto">
                 <a
                   href="#"
-                  className="text-[#0B63CE] font-semibold text-sm hover:underline"
+                  className="text-[#0B63CE] font-semibold text-lg hover:underline"
                 >
                   Know More →
                 </a>

@@ -1,29 +1,25 @@
-import React from 'react'
-import CoreBusinessDomains from '../components/home/CoreBusinessDomains'
-import Banner from '../components/home/Hero'
-import OurInnovativeSolutions from '../components/home/OurInnovativeSolutions'
-import Hero from '../components/home/Hero'
-import AIActionableIntelligence from '../components/home/AIActionableIntelligence'
-import OurFounders from '../components/home/OurFounders'
-import NewsArticles from '../components/home/NewsArticles'
-import PartneringForGlobalImpact from '../components/home/PartneringForGlobalImpact'
+import React, { lazy, Suspense } from 'react'
+import Loader from '../layouts/Loader'
 
-
-// import BusinessDomains from '../components/home/BusinessDomains'
-// import InnovativeSolutions from '../components/home/InnovativeSolutions'
-
+const Hero = lazy(() => import('../components/home/Hero'))
+const CoreBusinessDomains = lazy(() => import('../components/home/CoreBusinessDomains'))
+const OurInnovativeSolutions = lazy(() => import('../components/home/OurInnovativeSolutions'))
+const AIActionableIntelligence = lazy(() => import('../components/home/AIActionableIntelligence'))
+const OurFounders = lazy(() => import('../components/home/OurFounders'))
+const NewsArticles = lazy(() => import('../components/home/NewsArticles'))
+const PartneringForGlobalImpact = lazy(() => import('../components/home/PartneringForGlobalImpact'))
 
 const HomePage = () => {
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <Hero />
       <CoreBusinessDomains />
       <OurInnovativeSolutions />
       <AIActionableIntelligence />
       <OurFounders />
       <NewsArticles />
-      <PartneringForGlobalImpact /> 
-    </>
+      <PartneringForGlobalImpact />
+    </Suspense>
   )
 }
 

@@ -32,7 +32,7 @@ const OurCommitment = () => {
 
           {/* Right Content */}
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl lg:text-5xl font-semibold text-webprimary mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold text-webprimary mb-6">
               Our Commitment
             </h2>
 

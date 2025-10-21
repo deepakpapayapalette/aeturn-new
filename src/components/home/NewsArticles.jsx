@@ -42,7 +42,7 @@ const NewsArticles = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm mt-1">
+                <p className="text-gray-600 text-md mt-1">
                   Innovative road safety solution to monitor driver fitness, vehicle
                   health, and driving behaviour.
                 </p>

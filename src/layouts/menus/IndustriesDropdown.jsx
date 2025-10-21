@@ -1,16 +1,17 @@
 import React from 'react';
 import img from '../../assets/images/navbar/Industries-dropdown.png'
 import { NavLink } from 'react-router-dom';
-export default function IndustriesDropdown({ setIsDropdownOpen }) {
-  console.log(setIsDropdownOpen, 'setIsDropdownOpen')
+
+export default function IndustriesDropdown({ isMobile }) {
+  // console.log(setIsDropdownOpen, 'setIsDropdownOpen')
   const handleRefresh = (e) => {
-    e.preventDefault(); // prevents default link navigation
-    window.location.reload(); // reloads the page
+    e.preventDefault();
+    window.location.reload();
   };
   return (
-    <div className="flex items-center gap-6 p-5 bg-white ">
+    <div className="flex items-center gap-6 lg:p-5 ps-14 bg-white  w-full">
       {/* Left Image Section */}
-      <div className="relative  ">
+      <div className="relative  hidden lg:block">
         <img
           src={img}
           alt="Business workspace"
@@ -26,24 +27,60 @@ export default function IndustriesDropdown({ setIsDropdownOpen }) {
       </div>
 
       {/* Right Text Grid */}
-      <div className="grid grid-cols-2 grid-rows-3 gap-x-2 gap-y-4">
+      <div className="grid lg:grid-cols-2 lg:grid-rows-3 gap-x-2 gap-y-4 industries-dropdown">
         <div>
-          <NavLink className="text-md font-normal hover:text-webprimary" onClick={handleRefresh}>Public Health</NavLink>
+          <NavLink 
+            to={'/industries/public-health'} 
+            className={({ isActive }) => `text-md font-normal hover:text-webprimary ${isActive ? 'active' : ''}`} 
+            onClick={() => isMobile && isMobile(false)}
+          >
+            Public Health
+          </NavLink>
         </div>
         <div>
-          <NavLink className="text-md font-normal hover:text-webprimary" onClick={() => setIsDropdownOpen(false)}>Skill Development</NavLink>
+          <NavLink 
+            to={'/industries/skill-development'} 
+            className={({ isActive }) => `text-md font-normal hover:text-webprimary ${isActive ? 'active' : ''}`} 
+            onClick={() => isMobile && isMobile(false)}
+          >
+            Skill Development
+          </NavLink>
         </div>
         <div>
-          <NavLink className="text-md font-normal hover:text-webprimary" onClick={() => setIsDropdownOpen(false)}>Medical Tourism</NavLink>
+          <NavLink 
+            to={'/industries/medical-tourism'} 
+            className={({ isActive }) => `text-md font-normal hover:text-webprimary ${isActive ? 'active' : ''}`} 
+            onClick={() => isMobile && isMobile(false)}
+          >
+            Medical Tourism
+          </NavLink>
         </div>
         <div>
-          <NavLink className="text-md font-normal hover:text-webprimary" onClick={() => setIsDropdownOpen(false)}>Innovations</NavLink>
+          <NavLink 
+            to={'/industries/innovations'} 
+            className={({ isActive }) => `text-md font-normal hover:text-webprimary ${isActive ? 'active' : ''}`} 
+            onClick={() => isMobile && isMobile(false)}
+          >
+            Innovations
+          </NavLink>
         </div>
         <div>
-          <NavLink className="text-md font-normal hover:text-webprimary" onClick={() => setIsDropdownOpen(false)}>Road Safety</NavLink>
+          <NavLink 
+            to={'/industries/road-safety'} 
+            className={({ isActive }) => `text-md font-normal hover:text-webprimary ${isActive ? 'active' : ''}`} 
+            onClick={() => isMobile && isMobile(false)}
+          >
+            Road Safety
+          </NavLink>
         </div>
         <div>
-          <NavLink className="text-md font-normal hover:text-webprimary" onClick={() => setIsDropdownOpen(false)}>Tourism</NavLink>
+          <NavLink 
+            to={'/industries/tourism'} 
+            className={({ isActive }) => `text-md font-normal hover:text-webprimary ${isActive ? 'active' : ''}`} 
+            onClick={() => isMobile && isMobile(false)}
+          >
+            Tourism
+          </NavLink>
         </div>
       </div>
     </div>

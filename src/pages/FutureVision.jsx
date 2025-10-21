@@ -13,12 +13,11 @@ const FutureVision = () => {
   }
   return (
     <>
-      <Banner bannerContent={bannerContent} />
+      <Banner data={bannerContent} />
       <FutureVisionBanner />
       <FutureInnovations />
       <FutureMatters />
       <OurCommitment />
-
     </>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
 import imageLeft from '../../assets/images/home/our-innovative solutions.png'
 
-import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+const Carousel = React.lazy(() => import("react-multi-carousel"));
 const OurInnovativeSolutions = () => {
 
   const responsive = {

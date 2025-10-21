@@ -30,8 +30,22 @@
 }
 
 nav .active {
-  /* color: var(--web-primary); */
-  color: #444444;
+  color: var(--web-primary) !important;
   /* font-weight: 600; */
-
 }
+
+/* Active state for dropdown links */
+.industries-dropdown .active {
+  /* color: var(--web-primary) !important; */
+  /* font-weight: 500; */
+}
+
+/*
+.sub-dropdown {
+  display: none;
+}
+
+.drop-parent:hover .sub-dropdown {
+  display: block;
+
+} */

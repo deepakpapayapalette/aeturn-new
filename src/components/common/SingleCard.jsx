@@ -49,7 +49,8 @@ const SingleCard = ({ data = [], buttonText }) => {
               <div>
                 {data?.icon}
               </div>
-            </div> : null}
+            </div>
+            : null}
 
           {data?.listing ?
             <div className='mb-4'>
@@ -65,7 +66,7 @@ const SingleCard = ({ data = [], buttonText }) => {
           {/* Call Now Button */}
           {data.buttonText || buttonText ?
             <button className="w-full bg-webprimary hover:bg-[#005f8d] text-white font-semibold py-2 rounded-lg transition-colors">
-              {buttonText ? buttonText : "Call Now"}
+              {data.btnText || buttonText ? buttonText : "Call Now"}
             </button>
             : null
           }

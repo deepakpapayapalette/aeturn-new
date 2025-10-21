@@ -1,31 +1,22 @@
-
-// import { Route, Routes } from 'react-router-dom'
 import React from 'react'
-
-
 import WebsiteLayout from './layouts/WebsiteLayout'
 import ErrorPage from './pages/ErrorPage'
 import HomePage from './pages/Home'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import FutureVision from './pages/FutureVision';
+import PublicHealth from './pages/Industries/PublicHealth';
+import Industries from './pages/Industries/Industries';
+import MedicalTourism from './pages/Industries/MedicalTourism';
+import RoadSafety from './pages/Industries/RoadSafety';
+import SkillDevelopment from './pages/Industries/SkillDevelopment';
+import Innovations from './pages/Industries/Innovations';
+import TourismInner from './pages/Industries/TourismInner';
+import NewsArticles from './pages/NewsArticles';
+import NewsDetail from './pages/NewsDetail';
+
 
 
 function App() {
-
-  // return (
-  //   <Routes>
-  //     {/* Auth routes - no WebsiteLayout */}
-  //     <Route path="/login" element={<Login />} />
-  //     <Route path="/signup" element={<Signup />} />
-
-  //     {/* Website routes */}
-  //     <Route path="/*" element={<WebsiteRoutes />} />
-
-  //     {/* Dashboards */}
-  //     <Route path="/admin/*" element={<AdminRoutes />} />
-  //     {/*<Route path="/dashboard/*" element={<UserRoutes />} /> */}
-  //   </Routes>
-  // )
   const router = createBrowserRouter([
     {
       path: '/',
@@ -39,6 +30,46 @@ function App() {
         {
           path: '/future-vision',
           element: <FutureVision />
+        },
+        {
+          path: '/news',
+          element: <NewsArticles />
+        },
+        {
+          path: '/news/:id',
+          element: <NewsDetail />
+        },
+
+        {
+          path: '/industries',
+          element: <Industries />,
+          children: [
+            {
+              path: 'public-health', // 👈 child route -> /future-vision/child
+              element: <PublicHealth />,
+            },
+            {
+              path: 'medical-tourism',
+              element: <MedicalTourism />,
+            },
+            {
+              path: 'road-safety',
+              element: <RoadSafety />,
+            },
+            {
+              path: 'skill-development',
+              element: <SkillDevelopment />
+            },
+            {
+              path: 'innovations',
+              element: <Innovations />
+            },
+            {
+              path: 'tourism',
+              element: <TourismInner />
+            },
+
+          ],
         },
 
       ]
