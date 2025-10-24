@@ -8,27 +8,39 @@ import IndustriesDropdown from "./menus/IndustriesDropdown";
 
 
 import { useLocation } from "react-router-dom";
+import AssociationsDropdown from "./menus/AssociationsDropdown";
+import AboutDropdown from "./menus/AboutDropdown";
 
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
-  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+  const toggleDropdown = (dropdownName) => setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
 
   const [activeUrl, setActiveUrl] = useState(false);
 
-  // console.log(activeUrl, "activeUrl")
+
 
   const navLinksData = [
-
-    { name: "Industries", href: null, hasDropdown: true },
+    {
+      name: "Industries", href: '/industries-page', hasDropdown: true,
+      dropdownKey: "industries",
+      dropdown: <IndustriesDropdown />
+    },
     { name: "Future Vision", href: "/future-vision" },
-    { name: "Associations", href: "/associations" },
-    { name: "About Us", href: "/about" },
+    {
+      name: "Associations", href: "/associations", hasDropdown: true,
+      dropdownKey: "associations",
+      dropdown: <AssociationsDropdown />
+    },
+    {
+      name: "About Us", href: "/about", dropdownKey: "about",
+      hasDropdown: true, dropdown: <AboutDropdown />
+    },
     { name: "News & Articles", href: "/news" },
   ];
 
@@ -55,26 +67,29 @@ const Navbar = () => {
                 <div
                   key={link.name}
                   className=" drop-parent "
-                  onMouseEnter={() => setIsDropdownOpen(true)}
-                  onMouseLeave={() => setIsDropdownOpen(false)}
+                  onMouseEnter={() => setActiveDropdown(link.dropdownKey)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <NavLink
-                    to="/industries"
+                    to={
+                      link.href
+                    }
                     className={({ isActive }) =>
-                      `${staticLinkClass} navlink-disabled flex items-end gap-1 text-gray-700 ${isActive || location.pathname.startsWith("/industries")
-                        ? "active text-webprimary"
+                      `${staticLinkClass} navlink-disabled flex items-end gap-1 text-gray-700
+                        ${isActive || location.pathname.startsWith(`${link.dropdownKey}`)
+                        ? "active "
                         : ""
                       }`
                     }
-                    onClick={toggleDropdown}
+                    onClick={() => toggleDropdown(link.dropdownKey)}
                   >
                     {link.name}
                     <MdKeyboardArrowDown className="text-gray-700" />
                   </NavLink>
 
-                  {isDropdownOpen && (
+                  {activeDropdown === link.dropdownKey && (
                     <div className="lg:fixed absolute top-18 left-0 bg-white w-[100%] shadow-sm z-50  sub-dropdown">
-                      <IndustriesDropdown className=" " isMobile={toggleDropdown} />
+                      {link.dropdown}
                     </div>
                   )}
                 </div>
@@ -122,25 +137,26 @@ const Navbar = () => {
             {navLinksData.map((link) =>
               link.hasDropdown ? (
                 <div key={link.name} className="">
-                  {/* Industries main button */}
+                  {/* Dropdown main button */}
                   <button
-                    onClick={() => setIsDropdownOpen((prev) => !prev)}
+                    onClick={() => toggleDropdown(link.dropdownKey)}
                     className={`${staticLinkClass} flex items-center justify-center gap-1 w-full text-webPara hover:text-webprimary transition-colors duration-200 text-md`}
                   >
                     {link.name}
                     <MdKeyboardArrowDown
-                      className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""
+                      className={`transition-transform duration-300 ${activeDropdown === link.dropdownKey ? "rotate-180" : ""
                         }`}
                     />
                   </button>
 
-                  {/* Industries dropdown links */}
+                  {/* Dropdown links */}
                   <div
-                    className={`transition-all duration-500 ease-in-out overflow-hidden ${isDropdownOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                    className={`transition-all duration-500 ease-in-out overflow-hidden ${activeDropdown === link.dropdownKey ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
                       }`}
+
                   >
-                    <div className=" w-full  ps-20">
-                      <IndustriesDropdown isMobile />
+                    <div className=" w-full  text-left" onClick={closeMenu}>
+                      {link.dropdown}
                     </div>
                   </div>
                 </div>

@@ -243,8 +243,7 @@ const NewsArticles = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articlesData.map((item, index) => (
-            <div key={item.id || index} className="p-4 news-card w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-
+            <div key={item.id || index} className="p-4 news-card w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"> 
               <div className='relative'>
                 <img
                   src={item?.img || null}
@@ -280,7 +279,7 @@ const NewsArticles = () => {
                     </p>
                   </div>
                   <div className="read-more pb-4">
-                    <Link to={`${item.id}`} state={item} className="flex items-center gap-1 text-webprimary mt-3">
+                    <Link to={`${item.id}`} state={item} className="inline-flex items-center gap-1 text-webprimary mt-3">
                       <button className="font-bold">
                         Read More <IoIosArrowRoundForward className="text-2xl inline read-more-icon" />
                       </button>

@@ -105,7 +105,7 @@ const Innovations = () => {
           {technologyCards.map((card) => (
             <div
               key={card?._id || index}
-              className="domain-card bg-white text-gray-800 rounded-xl p-3 shadow-md flex flex-col justify-between border border-gray-300 hover:shadow-lg transition-shadow duration-300 space-y-3"
+              className="domain-card bg-white text-gray-800 rounded-xl p-3 gap-2 shadow-md space-y-2 border border-gray-300 hover:shadow-lg transition-shadow duration-300 "
             >
 
               {/* <card.icon className="w-8 h-8 mb-4 p-1 " style={{ color: card.iconColor }} /> */}

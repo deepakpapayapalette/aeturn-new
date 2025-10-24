@@ -4,6 +4,13 @@ import news2 from '../assets/images/news/news2.png'
 import news3 from '../assets/images/news/news3.png'
 import news4 from '../assets/images/news/news4.png'
 
+import medicalTourism from '../assets/images/home/Medical-Tourism.png'
+import roadSafety from '../assets/images/home/Road-Safety.png'
+import publicHealth from '../assets/images/home/Public-Health.png'
+import innovations from '../assets/images/home/Innovations.png'
+import skillDevelopment from '../assets/images/home/Skill-Development.png'
+import tourism from '../assets/images/home/Tourism.png'
+
 export const articlesData = [
   {
     id: 1,
@@ -298,3 +305,42 @@ export const UpdatesNews = [
     link: "/news/:id",
   },
 ]
+
+export const businessDomains = [
+  {
+    title: "Medical Tourism",
+    description: "Platforms connecting patients with global medical expertise and telemedicine services.",
+    image: medicalTourism,
+    link: "/industries/medical-tourism"
+  },
+  {
+    title: "Road Safety",
+    description: "Apps and solutions for driver fitness, vehicle tracking, and accident prevention.",
+    image: roadSafety,
+    link: "/industries/road-safety"
+  },
+  {
+    title: "Public Health",
+    description: "Technology solutions to improve healthcare systems and government health monitoring.",
+    image: publicHealth,
+    link: "/industries/public-health"
+  },
+  {
+    title: "Innovations",
+    description: "AI-enabled solutions and futuristic technology for actionable intelligence.",
+    image: innovations,
+    link: "/industries/innovations"
+  },
+  {
+    title: "Skill Development",
+    description: "Programs to enhance workforce skills, especially in healthcare and technology.",
+    image: skillDevelopment,
+    link: "/industries/skill-development"
+  },
+  {
+    title: "Tourism",
+    description: "Platforms connecting travellers, local services, commerce, trade, taste and treatment.",
+    image: tourism,
+    link: "/industries/tourism"
+  },
+];

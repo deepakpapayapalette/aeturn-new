@@ -4,7 +4,7 @@ import partnerImage from "../../assets/images/home/globalImpact.png"; // update 
 const PartneringForGlobalImpact = () => {
   return (
     <section className="space-top">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="flex md:flex-row flex-col gap-8 ">
           {/* Left Text Section */}
           <div className="md:w-1/2">
