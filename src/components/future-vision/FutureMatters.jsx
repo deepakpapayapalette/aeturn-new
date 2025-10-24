@@ -38,12 +38,12 @@ const FutureMatters = () => {
               {points.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-shadow duration-300"
+                  className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <h4 className="font-semibold text-gray-800 text-lg">
                     {item.title}
                   </h4>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <p className="text-gray-600 sm:text-lg">{item.description}</p>
                 </div>
               ))}
             </div>

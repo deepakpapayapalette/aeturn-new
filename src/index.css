@@ -1,7 +1,9 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,7 +13,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 html,
@@ -26,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
 }
 
@@ -45,7 +47,7 @@ h6 {
     --web-primary: #1268b3;
     --web-primary-foreground: #FFFFFF;
 
-    --web-secondary: #CCE4F0;
+    --web-secondary: #ffa500;
     --websecondary-foreground: #0F172A;
 
     --web-muted: #BDC4D44D;
@@ -202,6 +204,7 @@ h6 {
   background: none;
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .theme-btn:hover {
@@ -211,6 +214,7 @@ h6 {
 }
 
 .theme-btn-fill {
+  font-size: 18px;
   background: var(--web-primary);
   color: #fff;
   border: 2px solid var(--web-primary);
@@ -251,7 +255,16 @@ h6 {
 /* .active {
   color: var(--web-primary) !important;
 } */
+p {
+  font-family: Arial, sans-serif;
+}
 
+
+@media screen and (min-width:768px) {
+  p {
+    font-size: 18px !important;
+  }
+}
 
 @media screen and (max-width:768px) {
   p {

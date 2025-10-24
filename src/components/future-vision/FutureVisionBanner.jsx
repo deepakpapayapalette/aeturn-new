@@ -13,7 +13,7 @@ const FutureVisionBanner = () => {
               <h2 className="text-2xl lg:text-4xl font-semibold mb-4 leading-snug text-black">
                 Future Vision – Building a Smarter Tomorrow
               </h2>
-              <p className="text-sm lg:text-base text-para mb-6">
+              <p className="text-sm lg:text-lg text-para mb-6">
                 At AETURN, our vision goes beyond technology. We aim to create
                 AI-powered, future-ready innovations that transform healthcare,
                 safety, tourism, and skill development. Our focus is on Actionable

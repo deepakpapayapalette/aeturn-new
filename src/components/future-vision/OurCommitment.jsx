@@ -46,9 +46,9 @@ const OurCommitment = () => {
               {commitments.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg shadow-md border-l-4 border-webprimary p-5 hover:shadow-lg hover:border-webprimary transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-white rounded-lg shadow-md  border-webprimary p-5 hover:shadow-lg hover:border-webprimary transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <h4 className="font-bold text-gray-900 text-xl">
+                  <h4 className="font-semibold  text-xl">
                     {item.title}
                   </h4>
                 </div>

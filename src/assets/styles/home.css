@@ -24,12 +24,20 @@
   text-align: left;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-bottom: 6px solid #f8a700;
+  border-bottom: 6px solid var(--web-secondary);
 }
 
 .domain-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.founder-card .founder-image {
+  transition: ease-in-out 0.4s;
+}
+
+.founder-card:hover .founder-image {
+  transform: scale(1.07);
 }
 
 @media screen and (min-width: 1024px) {
@@ -79,4 +87,15 @@
     right: 50%;
     transform: translateX(50%);
   }
+}
+
+.inner-content {}
+
+.read-more-icon {
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover .read-more-icon {
+  transform: translateX(6px);
+
 }

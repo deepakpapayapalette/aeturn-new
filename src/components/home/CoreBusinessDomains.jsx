@@ -44,7 +44,7 @@ const CoreBusinessDomains = () => {
   return (
     <section className="space-top bg-webprimary py-12">
       <div className="container  text-white ">
-        <h2 className=" text-2xl md:text-4xl font-bold mb-4">Our Core Business Domains</h2>
+        <h2 className=" text-2xl md:text-4xl font-semibold mb-4">Our Core Business Domains</h2>
         <p className="text-lg mb-10">
           Delivering innovative, tech-enabled solutions across Public Health,
           Medical Tourism, Road Safety, Skill Development, and cutting-edge AI
@@ -64,12 +64,12 @@ const CoreBusinessDomains = () => {
                 <h3 className="md:text-2xl font-semibold text-webprimary mb-2">
                   {domain.title}
                 </h3>
-                <p className="text-md mb-4">{domain.description}</p>
+                <p className="sm:text-lg mb-3">{domain.description}</p>
               </div>
               <div className="flex justify-between items-center mt-auto">
                 <a
                   href="#"
-                  className="text-[#0B63CE] font-semibold text-lg hover:underline"
+                  className="text-[#0B63CE] font-semibold text-lg hover:translate-x-4  transition-transform ease-in-out duration-200"
                 >
                   Know More →
                 </a>

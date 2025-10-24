@@ -9,7 +9,7 @@ const PartneringForGlobalImpact = () => {
           {/* Left Text Section */}
           <div className="md:w-1/2">
             <h3 className="text-4xl font-semibold text-webprimary mb-3 leading-snug">
-              Partnering for global <br className="hidden md:block" /> impact.
+              Partnering for global  impact.
             </h3>
             <p className="text-gray-700 text-lg mb-6">
               AETURN collaborates with governments, councils, and organizations to drive technology-enabled transformation across healthcare, tourism, and skill development sectors. By combining strategic partnerships with our advanced ZENERIC AI framework, we help institutions modernize operations, enhance citizen engagement, and create data-driven ecosystems that deliver measurable impact.

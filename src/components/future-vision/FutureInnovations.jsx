@@ -56,7 +56,7 @@ const FutureInnovations = () => {
               className="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300 flex flex-col"
             >
               {/* Icon */}
-              <div className="mb-4 bg-white hover:bg-gray-100 rounded-full border-2 border-webprimary w-16 h-16 flex items-center justify-center"><span className="  " style={{ display: 'inline-block' }}>{item.icon}</span></div>
+              <div className="mb-4   rounded-full border   w-16 h-16 flex items-center justify-center"><span className="  " style={{ display: 'inline-block' }}>{item.icon}</span></div>
 
               {/* Title */}
               <h4 className="text-xl font-semibold text-webprimary mb-2">
@@ -64,12 +64,12 @@ const FutureInnovations = () => {
               </h4>
 
               {/* Description */}
-              <p className="text-gray-600 text-sm mb-3">{item.description}</p>
+              <p className="text-gray-600 sm:text-lg mb-3">{item.description}</p>
 
               {/* Points */}
               <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
                 {item.points.map((point, i) => (
-                  <li key={i}>{point}</li>
+                  <li key={i} className="sm:text-lg">{point}</li>
                 ))}
               </ul>
             </div>

@@ -7,15 +7,21 @@ import "../assets/styles/website/navbar.css";
 import IndustriesDropdown from "./menus/IndustriesDropdown";
 
 
-
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+
+  const [activeUrl, setActiveUrl] = useState(false);
+
+  // console.log(activeUrl, "activeUrl")
 
   const navLinksData = [
 
@@ -25,6 +31,7 @@ const Navbar = () => {
     { name: "About Us", href: "/about" },
     { name: "News & Articles", href: "/news" },
   ];
+
 
   const linkClass = ({ isActive }) =>
     `text-gray-700 hover:text-webprimary block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 ${isActive ? 'active' : ''
@@ -42,28 +49,32 @@ const Navbar = () => {
           </NavLink>
 
           {/* ===== Desktop Menu ===== */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 relative">
             {navLinksData.map((link) =>
               link.hasDropdown ? (
                 <div
                   key={link.name}
-                  className="relative drop-parent"
+                  className=" drop-parent "
                   onMouseEnter={() => setIsDropdownOpen(true)}
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
-                  <NavLink className={`text-gray-700 disabled-navlink `} to="#">
-                    <div
-                      className={` ${staticLinkClass} flex items-end gap-1`}
-                      onClick={toggleDropdown}
-                    >
-                      {link.name}
-                      <MdKeyboardArrowDown className="text-gray-700" />
-                    </div>
+                  <NavLink
+                    to="/industries"
+                    className={({ isActive }) =>
+                      `${staticLinkClass} navlink-disabled flex items-end gap-1 text-gray-700 ${isActive || location.pathname.startsWith("/industries")
+                        ? "active text-webprimary"
+                        : ""
+                      }`
+                    }
+                    onClick={toggleDropdown}
+                  >
+                    {link.name}
+                    <MdKeyboardArrowDown className="text-gray-700" />
                   </NavLink>
 
                   {isDropdownOpen && (
-                    <div className="absolute top-12 left-0 bg-white w-[840px] shadow-sm z-50 sub-dropdown">
-                      <IndustriesDropdown />
+                    <div className="lg:fixed absolute top-18 left-0 bg-white w-[100%] shadow-sm z-50  sub-dropdown">
+                      <IndustriesDropdown className=" " isMobile={toggleDropdown} />
                     </div>
                   )}
                 </div>
@@ -84,7 +95,7 @@ const Navbar = () => {
           {/* ===== Desktop CTA ===== */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link to="/contact">
-              <button className="min-w-[90px] btn-first">Get In Touch</button>
+              <button className="min-w-[90px] theme-btn-fill" style={{ fontSize: '16px', paddingBlock: '9px' }}>Get In Touch</button>
             </Link>
           </div>
 
@@ -110,11 +121,11 @@ const Navbar = () => {
           <div className="px-2 pt-8 pb-3 space-y-1 flex flex-col items-center">
             {navLinksData.map((link) =>
               link.hasDropdown ? (
-                <div key={link.name} className="w-full">
+                <div key={link.name} className="">
                   {/* Industries main button */}
                   <button
                     onClick={() => setIsDropdownOpen((prev) => !prev)}
-                    className={`${staticLinkClass} flex items-center justify-center gap-1 w-full`}
+                    className={`${staticLinkClass} flex items-center justify-center gap-1 w-full text-webPara hover:text-webprimary transition-colors duration-200 text-md`}
                   >
                     {link.name}
                     <MdKeyboardArrowDown
@@ -128,7 +139,7 @@ const Navbar = () => {
                     className={`transition-all duration-500 ease-in-out overflow-hidden ${isDropdownOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
                       }`}
                   >
-                    <div className="bg-gray-50 border-t border-gray-200 w-full   rounded-md shadow-sm">
+                    <div className=" w-full  ps-20">
                       <IndustriesDropdown isMobile />
                     </div>
                   </div>
@@ -149,7 +160,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-4 px-8 w-full pt-6">
               <Link to="/contact">
                 <button
-                  className="w-full btn-first py-3 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="theme-btn-fill w-full font-medium transition-colors duration-200"
                   onClick={closeMenu}
                 >
                   Get In Touch

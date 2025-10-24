@@ -13,6 +13,8 @@ import Innovations from './pages/Industries/Innovations';
 import TourismInner from './pages/Industries/TourismInner';
 import NewsArticles from './pages/NewsArticles';
 import NewsDetail from './pages/NewsDetail';
+import About from './pages/About/About';
+import Associations from './pages/Associations';
 
 
 
@@ -26,6 +28,14 @@ function App() {
         {
           path: '/',
           element: <HomePage />
+        },
+        {
+          path: '/about',
+          element: <About />
+        },
+        {
+          path: '/associations',
+          element: <Associations />
         },
         {
           path: '/future-vision',

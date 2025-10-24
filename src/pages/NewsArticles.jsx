@@ -10,6 +10,8 @@ import latest1 from '../assets/images/news/latest.png'
 import Banner from '../components/common/Banner'
 import { Link } from 'react-router-dom';
 import newsImg from "../assets/images/home/news-article.png"
+import { articlesData, UpdatesNews } from '../data/LocalData';
+import { IoIosArrowRoundForward } from "react-icons/io";
 const Carousel = React.lazy(() => import("react-multi-carousel"));
 
 const responsive = {
@@ -66,97 +68,8 @@ const featuredNews = {
   category: "Jan Drive Safe",
   image: news1
 };
-const UpdatesNews = [
-  {
-    id: 1,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news1,
-    duration: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news2,
-    duration: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "UP CM Yogi Aditya Nath on Jan Drive Safe Project",
-    category: "Jan Drive Safe",
-    image: news3,
-    duration: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    link: "#",
-  }]
-
-const previousArticles = [
-  {
-    id: 1,
-    readTime: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    lookup_value: "aeturn-zen-drive-launch",
-    link: "#",
-    img: newsImg,
-  },
-  {
-    id: 2,
-    readTime: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    lookup_value: "aeturn-zen-drive-launch",
-    link: "#",
-    img: newsImg,
-  },
-  {
-    id: 3,
-    readTime: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    lookup_value: "aeturn-zen-drive-launch",
-    link: "#",
-    img: newsImg,
-  },
-  {
-    id: 4,
-    readTime: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    lookup_value: "aeturn-zen-drive-launch",
-    link: "#",
-    img: newsImg,
-  },
-  {
-    id: 4,
-    readTime: "12Min",
-    date: "12/01/2025",
-    views: "2.5k",
-    title: "AETURN Launches Zen Drive Safe App",
-    description: "Innovative road safety solution to monitor driver fitness, vehicle health, and driving behaviour.",
-    lookup_value: "aeturn-zen-drive-launch",
-    link: "#",
-    img: newsImg,
-  },
 
 
-]
 const NewsArticles = () => {
   return (
     <div>
@@ -283,7 +196,7 @@ const NewsArticles = () => {
                   <h3 className="text-lg  font-normal mb-3 sm:mb-6 leading-1">
                     {item.title}
                   </h3>
-                  <Link to={item.link} className="flex items-center gap-2 hover:text-gray-200 transition-colors">
+                  <Link to={`${item.id}`} state={item} className="flex items-center gap-2 hover:text-gray-200 transition-colors">
                     <button className="theme-btn flex items-center gap-2 !text-white !border-white  ">
                       Read Now
                       <ArrowRight size={18} />
@@ -291,7 +204,6 @@ const NewsArticles = () => {
                   </Link>
                 </div>
               </div>
-
             ))}
           </Carousel>
         </div>
@@ -330,41 +242,53 @@ const NewsArticles = () => {
           Our Previous Articles
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {previousArticles.map((item, index) => (
-            <div key={index} className="p-4 w-full bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <Link to={`${item.id}`} data={item} state={item}>
+          {articlesData.map((item, index) => (
+            <div key={item.id || index} className="p-4 news-card w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+
+              <div className='relative'>
                 <img
                   src={item?.img || null}
                   alt="Zen Drive Safe App Launch"
-                  className="w-full h-48 object-cover rounded-t-lg "
+                  className="w-full h-atuo object-cover rounded-t-lg "
                 />
-
                 {/* Content */}
-                <div className="p-4">
-                  {/* Meta Info */}
-                  <div className="flex justify-between text-gray-500 text-sm mb-2">
-                    <div className="flex items-center gap-1">
-                      <FaRegClock /> {item?.duration || null}
+                <div className="content relative pt-5">
+
+                  <div className=" inner-content relative">
+                    {/* Meta Info */}
+                    <div className="flex justify-between text-gray-500 text-sm mb-2">
+                      <div className="flex items-center gap-1">
+                        <FaRegClock /> {item?.duration || '12Min' || null}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <FaRegCalendarAlt /> {item?.date || null}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <FaRegEye /> {item?.views || null}
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <FaRegCalendarAlt /> {item?.date || null}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <FaRegEye /> {item?.views || null}
-                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl  font-bold  leading-snug">
+                      {item?.title || null}
+                    </h3>
+
+                    {/* Description  max 4 lines show otherwise show ...*/}
+
+                    <p className="text-para text-sm mt-2 line-clamp-3">
+                      {item?.description || null}
+                    </p>
                   </div>
-
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-gray-900 leading-snug">
-                    {item?.title || null}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-md mt-1">
-                    {item?.description || null}
-                  </p>
+                  <div className="read-more pb-4">
+                    <Link to={`${item.id}`} state={item} className="flex items-center gap-1 text-webprimary mt-3">
+                      <button className="font-bold">
+                        Read More <IoIosArrowRoundForward className="text-2xl inline read-more-icon" />
+                      </button>
+                    </Link>
+                  </div>
                 </div>
-              </Link>
+              </div>
+
             </div>
           ))}
         </div>
