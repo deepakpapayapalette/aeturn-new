@@ -2,13 +2,6 @@ nav .active {
   color: var(--web-primary) !important;
   /* font-weight: 600; */
 }
-
-/* Active state for dropdown links */
-.industries-dropdown .active {
-  /* color: var(--web-primary) !important; */
-  /* font-weight: 500; */
-}
-
 @keyframes growDown {
   0% {
     transform: scaleY(0)

@@ -9,7 +9,7 @@ const CoreBusinessDomains = () => {
   return (
     <section className="space-top bg-webprimary py-12">
       <div className="container  text-white ">
-        <h2 className=" text-2xl md:text-4xl font-semibold mb-4">Our Core Business Domains</h2>
+        <h2 className=" text-2xl md:text-4xl font-semibold mb-2">Our Core Business Domains</h2>
         <p className="text-lg mb-10">
           Delivering innovative, tech-enabled solutions across Public Health,
           Medical Tourism, Road Safety, Skill Development, and cutting-edge AI
@@ -31,7 +31,7 @@ const CoreBusinessDomains = () => {
                 <Link
                   to={item.link}
 
-                  className="text-[#0B63CE] font-semibold text-lg hover:translate-x-4  transition-transform ease-in-out duration-200"
+                  className="text-[#0B63CE] font-semibold text-md hover:translate-x-4  transition-transform ease-in-out duration-200"
                 >
                   Know More →
                 </Link>

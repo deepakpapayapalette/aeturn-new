@@ -1,11 +1,11 @@
 import React from 'react'
-import banner from "../../assets/images/home/banner.gif"
+import banner2 from "../../assets/images/home/banner-home.gif"
 import bannerBottom from "../../assets/images/banner-bottom.gif"
 
 
 const Hero = () => {
   return (
-    <div className='overflow-hidden bg-cover bg-right bg-no-repeat z-20 relative flex items-center banner w-full lg:h-[90vh] md:h-[80vh] h-[55vh]' style={{ backgroundImage: `url(${banner})` }}>
+    <div className='overflow-hidden bg-cover bg-right bg-no-repeat z-20 relative flex items-center banner w-full lg:h-[90vh] md:h-[80vh] h-[70vh]' style={{ backgroundImage: `url(${banner2})` }}>
       <div className="container z-20">
         <div className=' text-white flex   '>
           <div className="md:w-3/4 md:space-y-5 space-y-4">

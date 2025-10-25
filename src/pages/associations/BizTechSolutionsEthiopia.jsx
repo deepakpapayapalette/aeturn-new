@@ -5,8 +5,10 @@ import icon1 from '../../assets/images/associations/icon1.png'
 import { Cpu, Stethoscope, Car, Leaf, Brain, Activity, Truck, Recycle } from 'lucide-react';
 import { FaHospitalSymbol } from "react-icons/fa";
 import cardImg from "../../assets/images/innovations.png"
-import ThemeCard from '../../components/UI/ThemeCard';
+
 import AssociationHead from '../../components/reusable/AssociationHead';
+import ThemeCard from '../../components/reusable/ThemeCard';
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 const bannerContent = {
   // image: bannerImage,
   title: "BizTech Solutions, Ethiopia",
@@ -64,6 +66,7 @@ const associationHeadData = {
 const BizTechSolutionsEthiopia = () => {
   return (
     <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <AssociationHead data={associationHeadData} />
 

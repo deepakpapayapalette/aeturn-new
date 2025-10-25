@@ -27,18 +27,18 @@ const Navbar = () => {
 
   const navLinksData = [
     {
-      name: "Industries", href: '/industries-page', hasDropdown: true,
+      name: "Industries", href: '#', hasDropdown: true,
       dropdownKey: "industries",
       dropdown: <IndustriesDropdown />
     },
     { name: "Future Vision", href: "/future-vision" },
     {
-      name: "Associations", href: "/associations", hasDropdown: true,
+      name: "Associations", href: "#", hasDropdown: true,
       dropdownKey: "associations",
       dropdown: <AssociationsDropdown />
     },
     {
-      name: "About Us", href: "/about", dropdownKey: "about",
+      name: "About Us", href: "#", dropdownKey: "about",
       hasDropdown: true, dropdown: <AboutDropdown />
     },
     { name: "News & Articles", href: "/news" },
@@ -61,7 +61,7 @@ const Navbar = () => {
           </NavLink>
 
           {/* ===== Desktop Menu ===== */}
-          <div className="hidden lg:flex items-center space-x-8 relative">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-4 relative">
             {navLinksData.map((link) =>
               link.hasDropdown ? (
                 <div
@@ -70,7 +70,7 @@ const Navbar = () => {
                   onMouseEnter={() => setActiveDropdown(link.dropdownKey)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <NavLink
+                  {/* <NavLink
                     to={
                       link.href
                     }
@@ -79,6 +79,19 @@ const Navbar = () => {
                         ${isActive || location.pathname.startsWith(`${link.dropdownKey}`)
                         ? "active "
                         : ""
+                      }`
+                    }
+                    onClick={() => toggleDropdown(link.dropdownKey)}
+                  >
+                    {link.name}
+                    <MdKeyboardArrowDown className="text-gray-700" />
+                  </NavLink> */}
+                  <NavLink
+                    to={link.href !== "#" ? link.href : location.pathname} // prevent '#' routes
+                    className={({ isActive }) =>
+                      `${staticLinkClass} navlink-disabled flex items-end gap-1 text-gray-700 ${
+                      // Only apply 'active' for non-dropdown routes
+                      !link.hasDropdown && isActive ? "active" : ""
                       }`
                     }
                     onClick={() => toggleDropdown(link.dropdownKey)}
@@ -130,17 +143,17 @@ const Navbar = () => {
         {/* ===== Mobile Menu ===== */}
         <div
           id="mobile-menu"
-          className={`lg:hidden absolute top-[73px] right-0 bg-white w-3/4 h-[calc(100vh-73px)] overflow-auto border-gray-200 transition-all duration-500 ease-in-out ${isMenuOpen ? "opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+          className={`lg:hidden absolute top-[73px] right-0 bg-white w-4/5 h-[calc(100vh-73px)] overflow-auto border-gray-200 transition-all duration-500 ease-in-out ${isMenuOpen ? "opacity-100" : "max-h-0 opacity-0 overflow-hidden"
             }`}
         >
-          <div className="px-2 pt-8 pb-3 space-y-1 flex flex-col items-center">
+          <div className="px-2 pt-8 pb-3 space-y-1 flex flex-col items-start">
             {navLinksData.map((link) =>
               link.hasDropdown ? (
                 <div key={link.name} className="">
                   {/* Dropdown main button */}
                   <button
                     onClick={() => toggleDropdown(link.dropdownKey)}
-                    className={`${staticLinkClass} flex items-center justify-center gap-1 w-full text-webPara hover:text-webprimary transition-colors duration-200 text-md`}
+                    className={`${staticLinkClass} flex items-center justify-start gap-1 w-full text-webPara hover:text-webprimary transition-colors duration-200 text-md`}
                   >
                     {link.name}
                     <MdKeyboardArrowDown
@@ -173,7 +186,7 @@ const Navbar = () => {
             )}
 
             {/* Mobile CTA */}
-            <div className="flex flex-col gap-4 px-8 w-full pt-6">
+            <div className="flex flex-col  gap-4  w-full pt-6">
               <Link to="/contact">
                 <button
                   className="theme-btn-fill w-full font-medium transition-colors duration-200"

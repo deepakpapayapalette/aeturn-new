@@ -3,13 +3,14 @@ import { useLocation, useParams } from 'react-router-dom'
 import newDetailImg from '../assets/images/news/news-detail.png'
 import newsDetail from '../assets/images/news/news-detail2.png'
 import { articlesData } from '../data/LocalData'
+import ScrollTopAtuo from '../components/common/ScrollTopAtuo'
 
 const NewsDetail = () => {
 
 
   const { id } = useParams();
   const data = articlesData.find((item) => item.id === parseInt(id));
-  console.log(data, "id");
+  // console.log(data, "id");
   // const articleState = useLocation();
 
 
@@ -17,6 +18,7 @@ const NewsDetail = () => {
 
   return (
     <>
+      <ScrollTopAtuo />
       <section className="container">
         {data ? (
           <div className=" pt-10 rounded-sm ">

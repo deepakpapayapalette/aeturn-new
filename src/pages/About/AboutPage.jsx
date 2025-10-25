@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import '../../assets/styles/home.css'
 import { businessDomains } from '../../data/LocalData'
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo'
 // export const aboutLink = [
 //   {
 //     title: "Medical Tourism",
@@ -15,7 +16,7 @@ import { businessDomains } from '../../data/LocalData'
 const AboutPage = () => {
   return (
     <>
-
+      <ScrollTopAtuo />
       <div className='container space-top'>
         <div className='mb-6'>
           <h2 className=" text-2xl md:text-4xl font-semibold mb-4 text-webprimary">About Us</h2>

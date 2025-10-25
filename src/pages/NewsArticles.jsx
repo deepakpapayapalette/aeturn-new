@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import newsImg from "../assets/images/home/news-article.png"
 import { articlesData, UpdatesNews } from '../data/LocalData';
 import { IoIosArrowRoundForward } from "react-icons/io";
+import ScrollTopAtuo from '../components/common/ScrollTopAtuo';
 const Carousel = React.lazy(() => import("react-multi-carousel"));
 
 const responsive = {
@@ -72,7 +73,8 @@ const featuredNews = {
 
 const NewsArticles = () => {
   return (
-    <div>
+    <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <div className='container space-top'>
         <h2 className='text-2xl sm:text-3xl lg:text-5xl text-webprimary mb-6 lg:mb-8'>
@@ -243,7 +245,7 @@ const NewsArticles = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articlesData.map((item, index) => (
-            <div key={item.id || index} className="p-4 news-card w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"> 
+            <div key={item.id || index} className="p-4 news-card w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className='relative'>
                 <img
                   src={item?.img || null}
@@ -279,7 +281,7 @@ const NewsArticles = () => {
                     </p>
                   </div>
                   <div className="read-more pb-4">
-                    <Link to={`${item.id}`} state={item} className="inline-flex items-center gap-1 text-webprimary mt-3">
+                    <Link to={`${item.id}`} className="inline-flex items-center gap-1 text-webprimary mt-3">
                       <button className="font-bold">
                         Read More <IoIosArrowRoundForward className="text-2xl inline read-more-icon" />
                       </button>
@@ -292,7 +294,7 @@ const NewsArticles = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

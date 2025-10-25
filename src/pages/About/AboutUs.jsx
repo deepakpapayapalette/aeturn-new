@@ -14,6 +14,7 @@ import { articlesData } from '../../data/LocalData'
 import NewsCard from '../../components/reusable/NewsArticles'
 import { Link } from 'react-router-dom'
 import { IoIosArrowRoundForward } from "react-icons/io";
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo'
 
 const bannerContent = {
   // image: bannerImage,
@@ -136,6 +137,7 @@ const innovativeSolutions = [
 const AboutUs = () => {
   return (
     <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <div className="space-top container">
         <div>
@@ -192,8 +194,6 @@ const AboutUs = () => {
         <div>
           <h2 className='md:text-3xl text-2xl mb-4 text-webprimary'>Our Daily Updates</h2>
           <NewsCard data={articlesData} link={"news"} />
-
-
         </div>
 
       </div>

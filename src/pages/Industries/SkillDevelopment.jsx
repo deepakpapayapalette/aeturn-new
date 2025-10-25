@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../../components/common/Banner'
 import Regular from '../../components/reusable/Regular'
 import img1 from '../../assets/images/skill-development.png'
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo'
 
 
 
@@ -63,6 +64,7 @@ const skillData = [
 const SkillDevelopment = () => {
   return (
     <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <Regular data={regular1Data} />
 

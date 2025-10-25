@@ -48,7 +48,7 @@ const NewsCard = ({ data = [] }) => {
                     </p>
                   </div>
                   <div className="read-more pb-4">
-                    <Link to={`news/${item.id}`} className="flex items-center gap-1 text-webprimary mt-3">
+                    <Link to={`${item.id}`} className="flex items-center gap-1 text-webprimary mt-3">
                       <button className="font-bold">
                         Read More <IoIosArrowRoundForward className="text-2xl inline read-more-icon" />
                       </button>

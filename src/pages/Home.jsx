@@ -1,10 +1,10 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import Loader from '../layouts/Loader'
 import newsImg from "../assets/images/home/news-article.png"
 import img from "../assets/images/home/meet-founder.png"
 import { FaLinkedin } from "react-icons/fa";
 import { articlesData } from '../data/LocalData';
-
+// import { ScrollTopAtuo } from '../components/common/ScrollTopAtuo';
 
 const Hero = lazy(() => import('../components/home/Hero'))
 const CoreBusinessDomains = lazy(() => import('../components/home/CoreBusinessDomains'))
@@ -12,8 +12,8 @@ const OurInnovativeSolutions = lazy(() => import('../components/home/OurInnovati
 const AIActionableIntelligence = lazy(() => import('../components/home/AIActionableIntelligence'))
 const OurFounders = lazy(() => import('../components/home/OurFounders'))
 const Article = lazy(() => import('../components/home/Article'))
-
 const PartneringForGlobalImpact = lazy(() => import('../components/home/PartneringForGlobalImpact'));
+const ScrollTopAtuo = lazy(() => import('../components/common/ScrollTopAtuo'));
 
 const newsData = [
   {
@@ -150,7 +150,8 @@ const ourFoundersData = [
     name: "Gaurav Pande",
     subtitle: "Founder & CEO",
     img: img,
-    icon: <FaLinkedin size={24} className='text-webprimary' />
+
+    link: "#"
 
 
   },
@@ -159,27 +160,37 @@ const ourFoundersData = [
     name: "Anil Sudan",
     subtitle: "Co-Founder & CTO",
     img,
-    icon: <FaLinkedin size={24} className='text-webprimary' />
+
+    link: "#"
   },
   {
     id: 3,
     name: "Shalini Pande",
     subtitle: "Co-Founder & COO",
     img,
-    icon: <FaLinkedin size={24} className='text-webprimary' />
+
+    link: "#"
 
   }
 ];
 
 const HomePage = () => {
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // }, []);
+
   return (
     <Suspense fallback={<Loader />}>
+      <ScrollTopAtuo />
       <Hero />
       <CoreBusinessDomains />
       <OurInnovativeSolutions />
       <AIActionableIntelligence />
-      <OurFounders data={ourFoundersData } />
-      <Article data={articlesData}  />
+      <OurFounders data={ourFoundersData} />
+      <Article data={articlesData} />
       <PartneringForGlobalImpact />
     </Suspense>
   )

@@ -32,7 +32,7 @@ const PartneringForGlobalImpact = () => {
           </div>
 
           {/* Right Image Section */}
-          <div className="md:w-1/2 flex justify-center">
+          <div className="md:w-1/2 flex md:justify-center">
             <img
               src={partnerImage}
               alt="Partnering for Global Impact"

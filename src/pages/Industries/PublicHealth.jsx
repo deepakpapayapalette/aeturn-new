@@ -12,6 +12,7 @@ import img1 from '../../assets/images/public-health/Focus-on-Public-Health.png'
 import ourSolutions from '../../assets/images/public-health/our-solution.png'
 import diseaseSurveillanceImage from '../../assets/images/public-health/disease.png'
 import bizaarioCareImage from '../../assets/images/public-health/bizario.png';
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
 const PublicHealth = () => {
   const bannerContent = {
@@ -85,9 +86,9 @@ const PublicHealth = () => {
 
   return (
     <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <Banner2 data={banner2Content} />
-
       {/* ==========Why We Focus on Public Health======== */}
       <Regular data={regular1Data} />
 

@@ -44,8 +44,11 @@ const technologyCards = [
 ];
 
 import { Rocket, FileText, TrendingUp, Heart } from 'lucide-react';
+import ThemeCard from '../../components/reusable/ThemeCard';
+import InnovationCard from '../../components/reusable/InnovationCard';
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
-import ThemeCard from '../../components/UI/ThemeCard';
+
 
 const statisticsCards = [
   {
@@ -90,38 +93,23 @@ const statisticsCards = [
 const cardContent = {
   img: cardImg,
   title: "Smart traffic, collision prevention, driver awareness, emergency response, and data-driven insights — all powered by technology to make roads safer.",
-  // subTitle: 'Smart traffic, collision prevention, driver awareness, emergency response, and data-driven insights — all powered by technology to make roads safer.',
   btnText: 'Explore Innovations ',
   btnLink: '#',
   icon: ''
 }
 const Innovations = () => {
   return (
-    <div>
+    <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <div className='space-top container'>
         <h2 className='lg:text-4xl text-2xl text-webprimary lg:mb-8 mb-6'>Our Key Areas of Innovation</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {technologyCards.map((card) => (
-            <div
-              key={card?._id || index}
-              className="domain-card bg-white text-gray-800 rounded-xl p-3 gap-2 shadow-md space-y-2 border border-gray-300 hover:shadow-lg transition-shadow duration-300 "
-            >
-
-              {/* <card.icon className="w-8 h-8 mb-4 p-1 " style={{ color: card.iconColor }} /> */}
-              <div className=" rounded-full border border-gray-300 w-14 h-14 flex items-center justify-center ">
-                <span className="" style={{ display: 'inline-block' }}>
-                  {/* {card.icon} */}
-                  <card.icon className="w-9 h-9  " style={{ color: card.iconColor }} />
-                </span></div>
-
-              <h3 className="sm:text-xl font-semibold text-webprimary">{card.title}</h3>
-              <p className="text-gray-600">{card.description}</p>
-            </div>
+          {technologyCards.map((card, index) => (
+            <InnovationCard card={card} key={card._id || index} />
           ))}
         </div>
       </div>
-
       <div className='space-top container'>
         <div className='rounded-lg md:shadow-card p-3'>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -135,12 +123,11 @@ const Innovations = () => {
             ))}
           </div>
         </div>
-      </div>
-
+      </div> 
       <div className='space-top container'>
         <ThemeCard data={cardContent} />
       </div>
-    </div>
+    </>
   )
 }
 

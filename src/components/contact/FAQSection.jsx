@@ -42,11 +42,10 @@ const FAQSection = () => {
       <div className="container">
         {/* Header Section */}
         <div className="mb-8 lg:mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-primary mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-webprimary mb-4">
             FAQs (Frequently Asked Questions)
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg max-w-4xl">
-            Here are some sample FAQs for a Driver Portal, suitable for a website or app used by drivers for managing appointments, records, safety compliance, etc.
+          <p className="text-gray-600 text-base sm:text-lg ">Here are some sample FAQs for a Doctor Portal, suitable for a website or app used by doctors for managing appointments, patients, records, collaborations, etc
           </p>
         </div>
 

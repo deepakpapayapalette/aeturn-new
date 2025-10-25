@@ -18,7 +18,7 @@ const OurInnovativeSolutions = () => {
       <div className="container">
         <div className="shadow-card px-6 py-5 rounded-lg">
           <h2 className='text-webprimary text-4xl mb-2'>Our Innovative Solutions</h2>
-          <p className='text-para text-lg mt-6'>
+          <p className='text-para text-lg '>
             Empowering healthcare, road safety, medical tourism, and commerce with tech-enabled, future-ready solutions designed to make a real-world impact
           </p>
 

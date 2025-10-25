@@ -7,6 +7,7 @@ import Banner2 from '../../components/common/Banner2';
 import Regular from '../../components/reusable/Regular';
 import RegularEven from '../../components/reusable/RegularEven';
 import zatraImage from '../../assets/images/tourism/zatra.png'
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
 const bannerContent = {
   image: bannerImage,
@@ -49,10 +50,10 @@ const regularEvenData = {
 const TourismInner = () => {
   return (
     <div>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <Banner2 data={banner2Content} />
       <Regular data={regular1Data} />
-
       <RegularEven data={regularEvenData} />
     </div>
   )

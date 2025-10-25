@@ -9,6 +9,7 @@ import img1 from '../../assets/images/medical-tourism/medical1.png'
 import diseaseSurveillanceImage from '../../assets/images/public-health/disease.png'
 import bizaarioCareImage from '../../assets/images/public-health/bizario.png';
 import RegularEven from '../../components/reusable/RegularEven';
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
 const bannerContent = {
   image: bannerImage,
@@ -70,6 +71,7 @@ const regularEvenData = {
 const MedicalTourism = () => {
   return (
     <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <Banner2 data={banner2Content} />
       <Regular data={regular1Data} />

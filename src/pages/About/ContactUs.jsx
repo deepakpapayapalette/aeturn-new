@@ -9,6 +9,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup';
 import Banner from '../../components/common/Banner';
 import FAQSection from '../../components/contact/FAQSection';
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
 const ContactUs = () => {
   const bannerContent = {
@@ -71,13 +72,14 @@ const ContactUs = () => {
 
   return (
     <>
-      <Banner bannerContent={bannerContent} />
+      <ScrollTopAtuo />
+      <Banner data={bannerContent} />
 
       <section className="space-top bg-white ">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Left Section */}
-            <div className='p-6 bg-webprimary'>
+            <div className='p-6 bg-webprimary rounded-lg'>
               <p className="text-white mb-2">Contact Us</p>
               <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
                 Send a Message
@@ -85,60 +87,75 @@ const ContactUs = () => {
 
 
               <form className="space-y-4" onSubmit={handleSubmit}>
-                <input
-                  onChange={handleChange}
-                  value={values.username}
-                  onBlur={handleBlur}
-                  name="username"
-                  type="text"
-                  placeholder="Full Name"
-                  className={`w-full border rounded-md px-4 py-2 focus:outline-none ${errors.username && touched.username ? 'border-red-500' : ''}`}
-                /> <br />
-                {errors.username && touched.username ?
-                  <p className="text-red-600 text-xs">{errors.username}</p>
-                  : null
-                }
-                <input
-                  onChange={handleChange}
-                  value={values.email}
-                  name='email'
-                  type="email"
-                  placeholder="Email Address"
-                  onBlur={handleBlur}
-                  className={`w-full border rounded-md px-4 py-2 focus:outline-none   ${errors.email && touched.email ? 'border-red-500' : ''}`}
-                /> <br />
-                {errors.email && touched.email ?
-                  <p className="text-red-600 text-xs">{errors.email}</p>
-                  : null
-                }
-                <input
-                  // allow only 10 digits
-                  maxLength={10}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.phone}
-                  name='phone'
-                  type="text"
-                  placeholder="Phone No"
-                  className={`w-full border rounded-md px-4 py-2 focus:outline-none ${errors.phone && touched.phone ? 'border-red-500' : ''}`}
-                /><br />
-                {errors.phone && touched.phone ?
-                  <p className="text-red-600 text-xs">{errors.phone}</p>
-                  : null
-                }
-                <textarea
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.message}
-                  name='message'
-                  placeholder="Message"
-                  rows="4"
-                  className={`w-full border rounded-md px-4 py-2 focus:outline-none  ${errors.message && touched.message ? 'border-red-500' : ''}`}
-                ></textarea><br />
-                {errors.message && touched.message ?
-                  <p className="text-red-600 text-xs">{errors.message}</p>
-                  : null
-                }
+                <div>
+
+                  <label htmlFor="username" className="text-white mb-2 inline-block">Full Name</label>
+                  <input
+                    onChange={handleChange}
+                    value={values.username}
+                    onBlur={handleBlur}
+                    name="username"
+                    type="text"
+                    placeholder="Full Name"
+                    className={`w-full border border-white bg-transparent  rounded-md px-4 py-2 focus:outline-none ${errors.username && touched.username ? 'border-red-500' : ''}`}
+                  /> <br />
+                  {errors.username && touched.username ?
+                    <p className="text-red-900 mt-1 text-sm">{errors.username}</p>
+                    : null
+                  }
+                </div>
+                <div>
+
+                  <label htmlFor="email" className="text-white mb-2 inline-block">Email ID</label>
+                  <input
+                    onChange={handleChange}
+                    value={values.email}
+                    name='email'
+                    type="email"
+                    placeholder="Email ID"
+                    onBlur={handleBlur}
+                    className={`w-full border border-white bg-transparent  rounded-md px-4 py-2 focus:outline-none   ${errors.email && touched.email ? 'border-red-500' : ''}`}
+                  /> <br />
+                  {errors.email && touched.email ?
+                    <p className="text-red-900 mt-1 text-sm">{errors.email}</p>
+                    : null
+                  }
+                </div>
+                <div>
+                  <label htmlFor="phone" className="text-white mb-2 inline-block">Phone Number</label>
+                  <input
+                    // allow only 10 digits
+                    maxLength={10}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.phone}
+                    name='phone'
+                    type="text"
+                    placeholder="Phone No"
+                    className={`w-full border border-white bg-transparent  rounded-md px-4 py-2 focus:outline-none ${errors.phone && touched.phone ? 'border-red-500' : ''}`}
+                  /><br />
+                  {errors.phone && touched.phone ?
+                    <p className="text-red-900 mt-1 text-sm">{errors.phone}</p>
+                    : null
+                  }
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="text-white mb-2 inline-block">Message</label>
+                  <textarea
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.message}
+                    name='message'
+                    placeholder="Message"
+                    rows="4"
+                    className={`w-full border border-white bg-transparent  rounded-md px-4 py-2 focus:outline-none  ${errors.message && touched.message ? 'border-red-500' : ''}`}
+                  ></textarea><br />
+                  {errors.message && touched.message ?
+                    <p className="text-red-900 mt-1 text-sm">{errors.message}</p>
+                    : null
+                  }
+                </div>
                 <button
                   type="submit"
                   className="flex items-center justify-center gap-2 bg-white text-webprimary px-6 py-2 rounded-md] transition"
@@ -155,8 +172,6 @@ const ContactUs = () => {
               <h2 className="text-2xl md:text-3xl font-semibold mb-4">
                 Let’s Talk
               </h2>
-
-
               {/* Contact Info */}
               <div className=" space-y-3 mb-6">
                 <div className="flex items-center gap-3 text-gray-700">
@@ -191,6 +206,25 @@ const ContactUs = () => {
                       </span>
                     </a>
                   ))}
+                </div>
+              </div>
+              {/* ================google-map=============== */}
+              <div>
+
+                <div className="mt-6">
+
+
+                  <div className="google-map-img">
+                    <iframe width="100%" height="400" frameBorder="0" scrolling="no" marginHeight="0"
+                      marginWidth="0"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0316610097216!2d77.37369367550069!3d28.628813175666686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce50a6c1d4a9d%3A0x15e488fd7503f354!2sUsis%20Biz%20Park!5e0!3m2!1sen!2sin!4v1755211067744!5m2!1sen!2sin">
+                      <a
+                        href="https://www.gps.ie/collections/drones/"></a>
+                    </iframe>
+
+
+
+                  </div>
                 </div>
               </div>
             </div>

@@ -8,6 +8,7 @@ import img1 from '../../assets/images/road-safety/why-road-safety.png'
 import diseaseSurveillanceImage from '../../assets/images/public-health/disease.png'
 import imgOdd from '../../assets/images/road-safety/zen-drive-safe.png';
 import RegularEven from '../../components/reusable/RegularEven';
+import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
 const bannerContent = {
   // image: bannerImage,
@@ -58,6 +59,7 @@ const regularOddData = {
 const RoadSafety = () => {
   return (
     <>
+      <ScrollTopAtuo />
       <Banner data={bannerContent} />
       <Banner2 data={banner2Content} />
       <Regular data={regular1Data} />

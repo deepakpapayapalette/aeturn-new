@@ -84,6 +84,10 @@ function App() {
               element: <AboutUs />,
             },
             {
+              path: 'about-us/:id',
+              element: <NewsDetail />,
+            },
+            {
               path: 'our-team',
               element: <OurTeam />,
             },

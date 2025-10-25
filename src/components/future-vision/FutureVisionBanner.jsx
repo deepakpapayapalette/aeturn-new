@@ -3,8 +3,8 @@ import img1 from "../../assets/images/future-vision/imag1.png";
 
 const FutureVisionBanner = () => {
   return (
-    <section className="space-top w-full bg-white">
-      <div className="container">
+    <section className="space-top container">
+      <div className="">
         <div className="flex  relative rounded-2xl overflow-hidden shadow-md  flex-col lg:flex-row">
 
           {/* Left Content */}
