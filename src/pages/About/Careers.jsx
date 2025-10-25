@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import bannerimg from "../../assets/images/about/min-banner.png"
 import Banner2 from '../../components/common/Banner2'
 import Banner from '../../components/common/Banner'
@@ -91,6 +91,17 @@ const Careers = () => {
       behavior: "smooth",
     });
   }, []);
+
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email.trim() === "") return;
+    setSubmitted(true);
+    setEmail("");
+    setTimeout(() => setSubmitted(false), 5000); // auto reset message
+  };
   return (
     <>
       <Banner data={bannerContent} />
@@ -125,6 +136,51 @@ const Careers = () => {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className='space-top container'>
+        <div>
+          <div className="bg-white shadow-md rounded-xl md:p-8 p-6   mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-webprimary mb-2">
+              Stay Connected with AETURN
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Be the first to know about new opportunities, updates, and innovations.
+              Subscribe to our newsletter and stay in the loop.
+            </p>
+
+            {/* Form */}
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col sm:flex-row items-start justify-start gap-3 max-w-xl mb-6"
+            >
+              <input
+                type="email"
+                placeholder="Your Email ID"
+                className="w-full sm:flex-1 border border-gray-300 rounded-md px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button
+                type="submit"
+                className="theme-btn-fill"
+                style={{ paddingBlock: "6px" }}
+              >
+                Subscribe
+              </button>
+            </form>
+
+            {/* Message Below */}
+            {submitted ? (
+              <p className="text-green-600 font-medium text-center">Thank you for subscribing!</p>
+            ) : (
+              <p className="text-webprimary text-center font-semibold">
+                There are no current openings
+              </p>
+            )}
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { FaFacebookF, FaLinkedinIn, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
 import LogoFooter from "../assets/images/home/logo-ft.png"
+import { NavLink } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -87,18 +88,18 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Footer Links */}
             <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2 text-sm">
-              <a href="#" className="hover:text-gray-200 transition-colors duration-200">
+              <NavLink to="/about/about-us" className="hover:text-gray-200 transition-colors duration-200">
                 About Us
-              </a>
-              <a href="#" className="hover:text-gray-200 transition-colors duration-200">
+              </NavLink>
+              <NavLink to="/future-vision" className="hover:text-gray-200 transition-colors duration-200">
                 Future Vision
-              </a>
-              <a href="#" className="hover:text-gray-200 transition-colors duration-200">
+              </NavLink>
+              <NavLink to="contact" className="hover:text-gray-200 transition-colors duration-200">
                 Contact Us
-              </a>
-              <a href="#" className="hover:text-gray-200 transition-colors duration-200">
+              </NavLink>
+              <NavLink to="#" className="hover:text-gray-200 transition-colors duration-200">
                 Privacy Policy
-              </a>
+              </NavLink>
             </div>
 
             {/* Copyright */}

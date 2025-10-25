@@ -31,14 +31,14 @@ const CoreBusinessDomains = () => {
                 <Link
                   to={item.link}
 
-                  className="text-[#0B63CE] font-semibold text-md hover:translate-x-4  transition-transform ease-in-out duration-200"
+                  className="text-[#0B63CE] font-normal text-md hover:translate-x-4  transition-transform ease-in-out duration-200"
                 >
                   Know More →
                 </Link>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-16 h-16 object-contain"
+                  className="max-w-[100px] h-auto object-contain"
                 />
               </div>
             </div>

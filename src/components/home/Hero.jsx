@@ -1,6 +1,7 @@
 import React from 'react'
 import banner2 from "../../assets/images/home/banner-home.gif"
 import bannerBottom from "../../assets/images/banner-bottom.gif"
+import { Link } from 'react-router-dom'
 
 
 const Hero = () => {
@@ -13,10 +14,11 @@ const Hero = () => {
               Building Future-Ready Technology Solutions for a Healthier, Safer, and Smarter World
             </h1>
             <p className='md:text-xl text-white'>Empowering Public Health, Medical Tourism, Road Safety, Skill Development, and AI-driven Innovations under the ZENIVERSE Venture Studio Model.</p>
-
-            <button className='text-webprimary text-lg px-8 py-3 rounded-md bg-white mt-5 hover:bg-webprimary hover:text-white transition'>
-              Explore Our Solutions
-            </button>
+            <Link to="about/solution-portfolio" >
+              <button className='text-webprimary text-lg px-8 py-3 rounded-md bg-white mt-5 hover:bg-webprimary hover:text-white transition'>
+                Explore Our Solutions
+              </button>
+            </Link>
           </div>
 
 

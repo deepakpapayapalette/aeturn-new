@@ -27,6 +27,7 @@ import OurTeam from './pages/About/OurTeam';
 import Careers from './pages/About/Careers';
 import SolutionPortfolio from './pages/About/SolutionPortfolio';
 import ContactUs from './pages/About/ContactUs';
+import AeturnEMR from './pages/AeturnEMR';
 
 
 
@@ -45,6 +46,10 @@ function App() {
         {
           path: '/associations',
           element: <Associations />
+        },
+        {
+          path: '/aeturn-emr',
+          element: <AeturnEMR />
         },
         {
           path: '/future-vision',

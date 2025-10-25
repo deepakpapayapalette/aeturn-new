@@ -4,6 +4,7 @@ import imageLeft from '../../assets/images/home/our-innovative solutions.png'
 import "react-multi-carousel/lib/styles.css"
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+import { Link } from 'react-router-dom';
 const Carousel = React.lazy(() => import("react-multi-carousel"));
 const OurInnovativeSolutions = () => {
 
@@ -48,9 +49,11 @@ const OurInnovativeSolutions = () => {
                     <p className='text-para text-lg lg:pe-8'>
                       The Multi-Tenant Electronic Medical Record (EMR) System by AETURN is a next-generation platform designed to seamlessly integrate with existing EMR/HMIS infrastructures, ensuring interoperability across healthcare ecosystems. Built on our ZENERIC AI framework, it enables real-time data exchange, advanced analytics, and intelligent automation — empowering hospitals, clinics, and public health authorities to make data-driven decisions with confidence.
                     </p>
-                    <button className='theme-btn-fill mt-4 '>
-                      Know More
-                    </button>
+                    <Link to="/aeturn-emr">
+                      <button className='theme-btn-fill mt-4 '>
+                        Know More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}
