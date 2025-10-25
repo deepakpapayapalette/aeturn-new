@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import FAQSection from '../components/contact/FAQSection';
+import ScrollTopAtuo from '../components/common/ScrollTopAtuo';
 
 
 const healthcareChallenges = [
@@ -157,6 +158,7 @@ const AeturnEMR = () => {
 
   return (
     <>
+      <ScrollTopAtuo />
       <div className='container md:pt-10 pt-8'>
         <div>
           <h2 className='text-2xl md:text-4xl text-webprimary mb-5'>AeturnEMR</h2>
