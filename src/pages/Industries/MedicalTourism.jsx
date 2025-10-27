@@ -13,15 +13,15 @@ import ScrollTopAtuo from '../../components/common/ScrollTopAtuo';
 
 const bannerContent = {
   image: bannerImage,
-  title: "Public Health",
+  title: "Medical Tourism",
   description: "AETURN  goes beyond individual patient care to support public health initiatives."
 }
 const banner2Content = {
   image: bannerImage2,
   title: " Transforming Public Health with Technology",
   description: "AI-driven, tech-enabled solutions improving healthcare access,  disease management, and community well- being at scale.",
-  button: "Partner With Us",
-  link: "#"
+  btnText: "Partner With Us",
+  link: "/contact"
 }
 const regular1Data = {
   title: "Why We Focus on Public Health ?",
@@ -45,7 +45,7 @@ const regularOddData = {
   title: "Bizaario Care",
   img: bizaarioCareImage,
   btnText: "Know More",
-  btnLink: "#",
+  btnLink: "/aeturn-emr",
   paraContent: [
     {
       id: 1,
@@ -58,7 +58,7 @@ const regularEvenData = {
   title: "Disease Surveillance Systems",
   img: diseaseSurveillanceImage,
   btnText: "Know More",
-  btnLink: "#",
+  btnLink: "/aeturn-emr",
   paraContent: [
     {
       id: 1,

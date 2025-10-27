@@ -1,5 +1,6 @@
 import React from "react";
 import heroImage from "../../assets/images/public-health/banner.jpg";
+import { Link } from "react-router-dom";
 
 const Banner2 = ({ data = [] || null }) => {
   return (
@@ -17,10 +18,12 @@ const Banner2 = ({ data = [] || null }) => {
               <p className="text-lg md:text-xl lg:text-2xl text-gray-100 md:mb-6 mb-3  leading-relaxed">
                 {data?.description || "Empowering Public Health, Medical Tourism, Road Safety, Skill Development, and AI-driven Innovations under the ZENIVERSE Venture Studio Model."}
               </p>
-              {data?.btnText ?
-                <button className="theme-btn-fill hover:text-white hover:border-white">
-                  {data?.btnText || null}
-                </button>
+              {data?.btnText || data?.button ?
+                <Link to={`${data?.link || "#"}`}>
+                  <button className="theme-btn-fill hover:text-white hover:border-white">
+                    {data?.btnText || data?.button || null}
+                  </button>
+                </Link>
                 : null
               }
             </div>

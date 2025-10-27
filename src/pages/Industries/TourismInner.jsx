@@ -19,7 +19,7 @@ const banner2Content = {
   title: " Transforming Tourism with Intelligent Technology",
   description: "Harnessing AI, IoT, and data analytics to enhance travel experiences, optimize tourism services, and create seamless, memorable journeys for every traveler.",
   button: "Partner With Us",
-  link: "#"
+  link: "/contact"
 }
 const regular1Data = {
   title: "Why We Focus on Tourism ?",
@@ -38,7 +38,7 @@ const regularEvenData = {
   title: "Zatra",
   img: zatraImage,
   btnText: "Know More",
-  btnLink: "#",
+  btnLink: "/aeturn-emr",
   paraContent: [
     {
       id: 1,

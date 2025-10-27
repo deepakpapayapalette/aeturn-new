@@ -94,7 +94,7 @@ const cardContent = {
   img: cardImg,
   title: "Smart traffic, collision prevention, driver awareness, emergency response, and data-driven insights — all powered by technology to make roads safer.",
   btnText: 'Explore Innovations ',
-  btnLink: '#',
+  link: "/contact",
   icon: ''
 }
 const Innovations = () => {
@@ -123,7 +123,7 @@ const Innovations = () => {
             ))}
           </div>
         </div>
-      </div> 
+      </div>
       <div className='space-top container'>
         <ThemeCard data={cardContent} />
       </div>

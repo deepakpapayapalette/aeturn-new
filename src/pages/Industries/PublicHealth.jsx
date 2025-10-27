@@ -25,7 +25,7 @@ const PublicHealth = () => {
     title: " Transforming Public Health with Technology",
     description: "AI-driven, tech-enabled solutions improving healthcare access,  disease management, and community well- being at scale.",
     button: "Partner With Us",
-    link: "#"
+    link: "/contact"
   }
   const regular1Data = {
     title: "Why We Focus on Public Health ?",
@@ -50,7 +50,7 @@ const PublicHealth = () => {
     subTitle: "Care Extension",
     img: ourSolutions,
     btnText: "Know More",
-    btnLink: "#",
+    btnLink: "/aeturn-emr",
     paraContent: [
       {
         id: 1,
@@ -63,7 +63,7 @@ const PublicHealth = () => {
     subTitle: "Disease Surveillance Systems",
     img: diseaseSurveillanceImage,
     btnText: "Know More",
-    btnLink: "#",
+    btnLink: "/aeturn-emr",
     paraContent: [
       {
         id: 1,
@@ -75,7 +75,7 @@ const PublicHealth = () => {
     title: "Bizaario Care",
     img: bizaarioCareImage,
     btnText: "Know More",
-    btnLink: "#",
+    btnLink: "/aeturn-emr",
     paraContent: [
       {
         id: 1,

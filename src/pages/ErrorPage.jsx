@@ -9,7 +9,7 @@ const ErrorPage = () => {
     const setTimeoutFn = setTimeout(() => {
       // call backFun after 5 seconds
       backFun();
-    }, 13000);
+    }, 5000);
 
     return (() => {
       clearTimeout(setTimeoutFn);

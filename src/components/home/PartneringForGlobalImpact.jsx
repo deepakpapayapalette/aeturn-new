@@ -1,5 +1,6 @@
 import React from "react";
 import partnerImage from "../../assets/images/home/globalImpact.png"; // update path
+import { Link } from "react-router-dom";
 
 const PartneringForGlobalImpact = () => {
   return (
@@ -27,8 +28,9 @@ const PartneringForGlobalImpact = () => {
               <li>KDS Services Pvt Ltd</li>
               <li>Indo American Chamber of Commerce (IACC)</li>
             </ul>
-
-            <button className="theme-btn-fill mt-6">Partner With Us</button>
+            <Link to='/contact'>
+              <button className="theme-btn-fill mt-6">Partner With Us</button>
+            </Link>
           </div>
 
           {/* Right Image Section */}

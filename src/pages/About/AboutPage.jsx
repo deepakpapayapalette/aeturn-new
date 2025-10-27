@@ -21,7 +21,7 @@ const AboutPage = () => {
         <div className='mb-6'>
           <h2 className=" text-2xl md:text-4xl font-semibold mb-4 text-webprimary">About Us</h2>
           <p className="text-lg mb-10 text-para">
-            Learn about ATRN Solutions LLP, our mission, and our founders.
+            {/* Learn about ATRN Solutions LLP, our mission, and our founders. */}
           </p>
         </div>
         {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

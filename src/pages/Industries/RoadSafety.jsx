@@ -20,7 +20,7 @@ const banner2Content = {
   title: " Transforming Road Safety with Intelligent Technology",
   description: "Harnessing AI, IoT, and data analytics to prevent collisions, optimize traffic flow, and create a safer future for every road user.",
   button: "Partner With Us",
-  link: "#"
+  link: "/contact"
 }
 const regular1Data = {
   title: "Why We Focus on Road Safety ?",
@@ -45,7 +45,7 @@ const regularOddData = {
   subTitle: 'Zen Drive Safe',
   img: imgOdd,
   btnText: "Know More",
-  btnLink: "#",
+  btnLink: "/aeturn-emr",
   paraContent: [
     {
       id: 1,

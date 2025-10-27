@@ -13,7 +13,6 @@ const AIActionableIntelligence = lazy(() => import('../components/home/AIActiona
 const OurFounders = lazy(() => import('../components/home/OurFounders'))
 const Article = lazy(() => import('../components/home/Article'))
 const PartneringForGlobalImpact = lazy(() => import('../components/home/PartneringForGlobalImpact'));
-const ScrollTopAtuo = lazy(() => import('../components/common/ScrollTopAtuo'));
 
 const newsData = [
   {
@@ -175,16 +174,15 @@ const ourFoundersData = [
 ];
 
 const HomePage = () => {
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // }, []);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <Suspense fallback={<Loader />}>
-      <ScrollTopAtuo />
       <Hero />
       <CoreBusinessDomains />
       <OurInnovativeSolutions />
