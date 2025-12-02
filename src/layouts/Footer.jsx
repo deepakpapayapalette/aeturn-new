@@ -38,11 +38,11 @@ export default function Footer() {
               <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-8 space-y-4 sm:space-y-0">
                 <div className="flex items-center space-x-3">
                   <MdPhone className="text-xl" />
-                  <span className="text-white text-base">(123) 456-7890</span>
+                  <span className="text-white text-base">8373 915519</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MdEmail className="text-xl" />
-                  <span className="text-white text-base">rairavi209@gmail.com</span>
+                  <span className="text-white text-base">gaurav@aeturn.com</span>
                 </div>
               </div>
 

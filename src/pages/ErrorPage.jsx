@@ -7,7 +7,6 @@ const ErrorPage = () => {
   const backFun = () => navigate(-1);
   useEffect(() => {
     const setTimeoutFn = setTimeout(() => {
-      // call backFun after 5 seconds
       backFun();
     }, 5000);
 

@@ -176,11 +176,11 @@ const ContactUs = () => {
               <div className=" space-y-3 mb-6">
                 <div className="flex items-center gap-3 text-gray-700">
                   <FiPhone className="text-lg" />
-                  <span>+91 5252525252</span>
+                  <span>+91 8373 915519</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
                   <FiMail className="text-lg" />
-                  <span>rjvijs42@gmail.com</span>
+                  <span>gaurav@aeturn.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700">
                   <FiMapPin className="text-lg" />
